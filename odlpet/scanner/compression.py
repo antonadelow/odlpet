@@ -173,7 +173,7 @@ class Compression:
 
     def get_stir_proj_data_info(self):
         _stir_scanner = self.scanner.get_stir_scanner()
-        proj_data_info = construct_proj_data_info(
+        proj_data_info = ProjDataInfo.construct_proj_data_info(
             _stir_scanner,
             self.span_num,
             self.max_diff_ring,
