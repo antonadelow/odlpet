@@ -38,7 +38,7 @@ class Scanner:
         if self.default_non_arc_cor_bins is None:
             self.default_non_arc_cor_bins = self.max_num_non_arc_cor_bins
 
-        scanner = _get_stir_scanner_by_name('Userdefined')
+        scanner = _get_stir_scanner_by_name('User_defined_scanner')
 
         for (sa, pa, ty) in ACCESSOR_MAPPING:
             getattr(scanner, "set_"+sa)(ty(getattr(self, pa)))
@@ -71,7 +71,7 @@ def _get_stir_scanner_by_name(name):
     """
     Get a STIR scanner by name.
     """
-    if name not in SCANNER_NAMES:
+    if name != User_defined_scanner and name not in SCANNER_NAMES:
         raise ValueError("No default scanner of name {}".format(name))
     stir_scanner = _Scanner.get_scanner_from_name(name)
     return stir_scanner
