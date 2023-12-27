@@ -173,9 +173,8 @@ class Compression:
 
     def get_stir_proj_data_info(self):
         _stir_scanner = self.scanner.get_stir_scanner()
-        proj_data_info = ProjDataInfo.ProjDataInfoCTI(
+        proj_data_info = ProjDataInfo.ProjDataInfoGE(
             _stir_scanner,
-            self.span_num,
             self.max_diff_ring,
             self.num_of_views,
             self.get_num_tangential(),
