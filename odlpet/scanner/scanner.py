@@ -71,7 +71,7 @@ def _get_stir_scanner_by_name(name):
     """
     Get a STIR scanner by name.
     """
-    if name != User_defined_scanner and name not in SCANNER_NAMES:
+    if name != "User_defined_scanner" and name not in SCANNER_NAMES:
         raise ValueError("No default scanner of name {}".format(name))
     stir_scanner = _Scanner.get_scanner_from_name(name)
     return stir_scanner
