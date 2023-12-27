@@ -28,7 +28,7 @@ class Scanner:
         """
         Return a STIR scanner object corresponding to this object.
         """
-
+        
         # TODO: should be moved to proper accessor methods
         if self.max_num_non_arc_cor_bins is None:
             # Roughly speaking number of detectors on the diameter
@@ -71,6 +71,7 @@ def _get_stir_scanner_by_name(name):
     """
     Get a STIR scanner by name.
     """
+    print(name)
     if name != 'User_defined_scanner' and name not in SCANNER_NAMES:
         raise ValueError("No default scanner of name {}".format(name))
     stir_scanner = _Scanner.get_scanner_from_name(name)
